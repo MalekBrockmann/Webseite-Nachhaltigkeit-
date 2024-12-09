@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html
-  data-wf-domain="motionpath-with-scrolltrigger.webflow.io"
   data-wf-page="63e40a9ba2e78b6eb797dd20"
-  data-wf-site="63e40a9ba2e78b361197dd1c"
 >
   <head>
     <meta charset="utf-8" />
@@ -23,18 +21,22 @@
             (n.className += t + 'touch')
       })(window, document)
     </script>
+    <!-- lädt Apple Touch Icon wenn es als lesezeichen gespeicehrt wird -->
     <link
       href="https://assets.website-files.com/img/webclip.png"
       rel="apple-touch-icon"
     />
+    <!-- lädt GSAP Animationen von JavaScript-Bibliothek -->
     <script
       defer
       src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"
     ></script>
+    <!-- lädt Scrolltrigger Plugin -->
     <script
       defer
       src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"
     ></script>
+    <!-- lädt MotionPathPlugin von GSAP um objekte einem vordefinierten Pfad entlang zu animieren-->
     <script
       defer
       src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/MotionPathPlugin.min.js"
@@ -163,6 +165,7 @@
       type="text/javascript"
     ></script>
     <script>
+       //Animiert den Kreis entlang dem Pfad basierend auf dem Scrollen
       function init() {
         gsap.registerPlugin(MotionPathPlugin, ScrollTrigger)
 
