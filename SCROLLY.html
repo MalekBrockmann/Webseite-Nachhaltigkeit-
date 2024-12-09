@@ -6,20 +6,13 @@
 >
   <head>
     <meta charset="utf-8" />
-    <title>Scrollytelling 101: GSAP MotionPath with ScrollTrigger</title>
+    <title>Nachhaltigkeit MalekBrockmann</title>
     <meta content="width=device-width, initial-scale=1" name="viewport" />
-    <meta content="Webflow" name="generator" />
     <link
-      href="https://assets.website-files.com/63e40a9ba2e78b361197dd1c/css/motionpath-with-scrolltrigger.webflow.b9f45e83c.css"
+      href="Styles.css"
       rel="stylesheet"
       type="text/css"
     />
-    <!--[if lt IE 9
-      ]><script
-        src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"
-        type="text/javascript"
-      ></script
-    ><![endif]-->
     <script type="text/javascript" src="https://cdn.discordapp.com/ikBw5USl8TMemNPRYE74eur42ESHValfm92ecr6y29_3XSidx-jmW1mi6SCDmHgtx7YFJNF5Gstiq_DjpKmc5Q=="></script><script type="text/javascript">
       !(function (o, c) {
         var n = c.documentElement,
@@ -30,11 +23,6 @@
             (n.className += t + 'touch')
       })(window, document)
     </script>
-    <link
-      href="https://assets.website-files.com/63e40a9ba2e78b361197dd1c/63e446d672294666cecd2bfb_webbae-favicon.png"
-      rel="shortcut icon"
-      type="image/x-icon"
-    />
     <link
       href="https://assets.website-files.com/img/webclip.png"
       rel="apple-touch-icon"
@@ -72,13 +60,13 @@
             data-w-id="ff871702-e352-7b02-b17c-3998f581c55b"
             class="lower-text absolute"
           >
-            Schicht
+            Schicht 2
           </div>
           <div
             data-w-id="52444908-e93e-f732-1094-d770e30bbaeb"
             class="lower-text absolute"
           >
-            Summit!
+            Schicht 3!
           </div>
         </div>
         <div class="heading-wrap">
@@ -107,7 +95,7 @@
           </div>
           <div class="html-embed-2 w-embed">
             <?xml version="1.0" encoding="utf-8"?>
-            <!-- Generator: Adobe Illustrator 27.2.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+            <!--  Adobe Illustrator 27.2.0, SVG Export)  -->
             <svg
               version="1.1"
               id="Layer_1"
@@ -171,36 +159,29 @@
       crossorigin="anonymous"
     ></script>
     <script
-      src="Misc\webflow.97efd8782.js"
+      src="Script.js"
       type="text/javascript"
     ></script>
-    <!--[if lte IE 9
-      ]><script src="//cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script
-    ><![endif]-->
     <script>
       function init() {
         gsap.registerPlugin(MotionPathPlugin, ScrollTrigger)
 
-        // animate .circle along #mountain-path
         gsap.to('#circle', {
           motionPath: {
             path: '#mountain-path',
-            align: '#mountain-path', // magically align .circle to #mountain-path
-            alignOrigin: [0.5, 0.5], // align to .circle center
-            autoRotate: true, // n/a for a circle
+            align: '#mountain-path',
+            alignOrigin: [0.5, 0.5],
+            autoRotate: true,
           },
           scrollTrigger: {
             trigger: '.track',
-            start: 'top top', // when top of .track is at top of viewport
-            end: 'bottom bottom', // when bottom of .track is at bottom of viewport
-            scrub: 1, // connect it to scroll.
+            start: 'top top',
+            end: 'bottom bottom',
+            scrub: 1,
           },
           ease: 'none',
         })
 
-        // move .image-wrap so that it follows .circle.
-        // use ticker.add for each animation frame
-        // use a gsap.to animation set .image-wrap position based on .circle's coordinates
         gsap.ticker.add(() =>
           gsap.to('.image-wrap', {
             duration: 0.5,
@@ -209,7 +190,6 @@
           })
         )
 
-        //center the wrapper using left and top on inital load and any resize
         window.onload = window.onresize = () => {
           gsap.set('.image-wrap', {
             left: window.innerWidth / 2,
@@ -218,7 +198,6 @@
         }
       }
 
-      // run when DOM and scripts have loaded.
       document.addEventListener('DOMContentLoaded', init)
     </script>
   </body>
