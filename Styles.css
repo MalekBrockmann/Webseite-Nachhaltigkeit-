@@ -204,3 +204,43 @@ html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:1
   font-style: normal;
   font-display: swap;
 }
+
+
+
+/* ------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+
+
+
+
+/* Stile für den Textcontainer */
+.text--wrapper {
+  position: fixed; /* Bleibt sichtbar, während die Seite gescrollt wird */
+  bottom: 10%; /* Position von unten (anpassbar) */
+  left: 80%; /* Zentriert horizontal */
+  transform: translateX(-50%); /* Exakte Zentrierung */
+  width: 20%; /* Breite des Containers */
+  padding: 20px; /* Innenabstand */
+  background-color: rgba(0, 0, 0, 0.7); /* Halbtransparenter Hintergrund */
+  color: white; /* Textfarbe */
+  font-size: 1.5rem; /* Schriftgröße */
+  font-family: Arial, sans-serif; /* Schriftart */
+  text-align: center; /* Zentrierter Text */
+  border-radius: 10px; /* Abgerundete Ecken */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Schatten für Tiefe */
+  z-index: 1000; /* Sicherstellen, dass es über anderen Elementen liegt */
+}
+
+/* Animation beim Textwechsel */
+.text--wrapper .text--content {
+  transition: opacity 0.5s ease, transform 0.5s ease; /* Weiche Übergänge */
+}
+
+.text--wrapper .text--content.fade-out {
+  opacity: 0; /* Unsichtbar machen */
+  transform: translateY(-10px); /* Leichtes Hochbewegen */
+}
+
+.text--wrapper .text--content.fade-in {
+  opacity: 1; /* Sichtbar machen */
+  transform: translateY(0); /* Zurück zur Ausgangsposition */
+}
