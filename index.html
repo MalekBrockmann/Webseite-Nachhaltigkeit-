@@ -47,7 +47,7 @@
     </div>
     <div data-w-id="3c8f5736-45e5-f032-32ac-52e35d12b04e" class="track">
       <div class="image-wrap">
-        <div id="circle" class="circle">
+        <div id="circle" class="circle" style="transform: scale(0.67);">
           <div data-w-id="98045b61-762a-9586-ac0f-0871af1658d1" style="
                 -webkit-transform: translate3d(0, 0, 0) scale3d(0, 0, 1)
                   rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);
@@ -63,44 +63,46 @@
         <div class="html-embed-2 w-embed">
           <!--  Adobe Illustrator, SVG Export)  -->
           <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-            x="0px" y="0px" viewBox="0 0 8192 4320" style="enable-background: new 0 0 8192 4320" xml:space="preserve">
-            <style type="text/css">
-              .st0 {
-                fill: none;
-                stroke: #30352e;
-                stroke-width: 5;
-                stroke-linecap: round;
-                stroke-miterlimit: 10;
-              }
+    x="0px" y="0px" viewBox="0 0 8192 4320" style="enable-background: new 0 0 8192 4320" xml:space="preserve">
+  <style type="text/css">
+    .st0 {
+      fill: none;
+      stroke: #30352e;
+      stroke-width: 5;
+      stroke-linecap: round;
+      stroke-miterlimit: 10;
+    }
 
-              .st1 {
-                fill: none;
-                stroke: #30352e;
-                stroke-width: 5;
-                stroke-linecap: round;
-                stroke-miterlimit: 10;
-                stroke-dasharray: 11.9945, 11.9945;
-              }
+    .st1 {
+      fill: none;
+      stroke: #30352e;
+      stroke-width: 5;
+      stroke-linecap: round;
+      stroke-miterlimit: 10;
+      stroke-dasharray: 11.9945, 11.9945;
+    }
 
-              .st2 {
-                fill: none;
-                stroke: #30352e;
-                stroke-width: 5;
-                stroke-linecap: round;
-                stroke-miterlimit: 10;
-                stroke-dasharray: 12;
-              }
-            </style>
-            <image style="overflow: visible" width="8192" height="4320"
-              xlink:href="https://github.com/MalekBrockmann/Webseite-Nachhaltigkeit-/blob/main/Bilder/GroundLayersKomp.jpg?raw=true">
-            </image>
-            <g>
-              <g>
-                <path id="mountain-path" class="st1"
-                  d="M3956.2,857.5c-4.54,45.36,1.03,80.27,7.58,104.83,9.96,37.36,20.99,46.22,29.33,88,7.18,35.95,2.19,45.25,5.33,101.33,3.53,62.99,10.46,62.48,13.33,114.67,3.76,68.26-8.06,69.76-5.33,133.33,2.55,59.36,14.88,105.4,24,138.67,19.01,69.4,30.1,70.79,45.33,133.33,8.58,35.22,18.77,78.4,16,133.33-2.56,50.81-15.02,88-34.67,146.67-26.3,78.52-37.77,81.17-45.33,128-5.91,36.61-.5,44.88,2.67,125.33,2.62,66.54-1.08,60.8,0,173.33.8,82.77,1.19,124.16,5.33,162.67,8.78,81.63,19.27,80.44,29.33,160,7.22,57.09,6.59,108.29,5.33,210.67-.51,41.58-1.76,94.45-4.74,156.02" />
-              </g>
-            </g>
-          </svg>
+    .st2 {
+      fill: none;
+      stroke: #30352e;
+      stroke-width: 5;
+      stroke-linecap: round;
+      stroke-miterlimit: 10;
+      stroke-dasharray: 12;
+    }
+  </style>
+  <image style="overflow: visible" width="5488" height="2894" x="1352" y="713"
+    xlink:href="https://github.com/MalekBrockmann/Webseite-Nachhaltigkeit-/blob/main/Bilder/GroundLayersKomp.jpg?raw=true">
+  </image>
+  <g >
+    <g transform="translate(1352, 713) scale(0.67)">
+      <path id="mountain-path" class="st1"
+        d="M3956.2,857.5c-4.54,45.36,1.03,80.27,7.58,104.83,9.96,37.36,20.99,46.22,29.33,88,7.18,35.95,2.19,45.25,5.33,101.33,3.53,62.99,10.46,62.48,13.33,114.67,3.76,68.26-8.06,69.76-5.33,133.33,2.55,59.36,14.88,105.4,24,138.67,19.01,69.4,30.1,70.79,45.33,133.33,8.58,35.22,18.77,78.4,16,133.33-2.56,50.81-15.02,88-34.67,146.67-26.3,78.52-37.77,81.17-45.33,128-5.91,36.61-.5,44.88,2.67,125.33,2.62,66.54-1.08,60.8,0,173.33.8,82.77,1.19,124.16,5.33,162.67,8.78,81.63,19.27,80.44,29.33,160,7.22,57.09,6.59,108.29,5.33,210.67-.51,41.58-1.76,94.45-4.74,156.02" />
+    </g>
+    
+  </g>
+</svg>
+
         </div>
       </div>
     </div>
@@ -168,7 +170,7 @@ window.addEventListener('scroll', () => {
   };
   // Bestimme den aktuellen Layer basierend auf Scrollposition
   let newTopText = '', newBottomText = '';
-  if (scrollY = 4950) {
+  if (scrollY > 4950) {
     newTopText = layerTexts[9].top;
     newBottomText = layerTexts[9].bottom;
   } else if (scrollY > 3450) {
