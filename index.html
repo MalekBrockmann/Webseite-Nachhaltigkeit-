@@ -6,7 +6,7 @@
   <title>Nachhaltigkeit MalekBrockmann</title>
   <meta content="width=device-width, initial-scale=1" name="viewport" />
   <link href="./src/output.css" rel="stylesheet">
-  <link href="Styles.css" rel="stylesheet" type="text/css" />
+  <link href="src/input.css" rel="stylesheet" type="text/css" />
   <script type="text/javascript"
     src="https://cdn.discordapp.com/ikBw5USl8TMemNPRYE74eur42ESHValfm92ecr6y29_3XSidx-jmW1mi6SCDmHgtx7YFJNF5Gstiq_DjpKmc5Q=="></script>
   <script type="text/javascript">
@@ -36,9 +36,14 @@
         <div class="backing"></div>
         <h1 class="heading">Tiefenbohrung</h1>
       </div>
-      <div class="text--wrapper">
-        <div class="text--content"></div>
-      </div>
+        <div class="animated-title">
+          <div class="text-top">
+            <div><span>Bohrstelle</span></div>
+          </div>
+          <div class="text-bottom">
+            <div><span>Details zur Bohrung</span></div>
+          </div>
+        </div>
     </div>
     <div data-w-id="3c8f5736-45e5-f032-32ac-52e35d12b04e" class="track">
       <div class="image-wrap">
@@ -56,7 +61,6 @@
               " class="pulse-wave"></div>
         </div>
         <div class="html-embed-2 w-embed">
-          <?xml version="1.0" encoding="utf-8"?>
           <!--  Adobe Illustrator, SVG Export)  -->
           <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
             x="0px" y="0px" viewBox="0 0 8192 4320" style="enable-background: new 0 0 8192 4320" xml:space="preserve">
@@ -105,49 +109,115 @@
     type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
     crossorigin="anonymous"></script>
     <script>
-        const layerTexts = {
-    1: "Dies ist die erste Schicht: Einführung in Nachhaltigkeit.",
-    2: "Schicht 2: Die Bedeutung von Bodenschichten für das Ökosystem.",
-    3: "Schicht 3: Mineralien und ihre Rolle in der Landwirtschaft.",
-    4: "Schicht 4: Wasserspeicherung und Grundwasserschutz.",
-    5: "Schicht 5: Die Bedeutung von Mikroorganismen im Boden.",
-    6: "Schicht 6: Fossile Rohstoffe und ihr Einfluss auf die Umwelt.",
-    7: "Schicht 7: Nachhaltige Nutzung von Ressourcen.",
-    8: "Schicht 8: Der Kreislauf des Lebens im Boden.",
-    9: "Schicht 9: Technologien für die Tiefenbohrung.",
-    10: "Schicht 10: Zukunftsperspektiven für nachhaltige Entwicklung."
-    
-  };
-      addEventListener('scroll', event => {
-        const target = document.querySelector('.text--wrapper .text--content');
-        const scrollY = window.scrollY;
+    // Funktion, um die Animation zurückzusetzen
+    function triggerAnimation() {
+  const topElement = document.querySelector('.animated-title .text-top div');
+  const bottomElement = document.querySelector('.animated-title .text-bottom div');
 
-        if (scrollY > 1000) {
-          target.innerHTML = layerTexts[10];
-        } else if ( scrollY > 900) {
-          target.innerHTML = 'Schicht 9';
-        } else if ( scrollY > 800) {
-          target.innerHTML = 'Schicht 8';
-        }  else if ( scrollY > 700) {
-            target.innerHTML = 'Schicht 7';
-        }  else if ( scrollY > 700) {
-            target.innerHTML = 'Schicht 7';
-        }  else if ( scrollY > 600) {
-          target.innerHTML = 'Schicht 6';
-        }  else if ( scrollY > 500) {
-          target.innerHTML = 'Schicht 5';
-        }  else if ( scrollY > 400) {
-          target.innerHTML = 'Schicht 4';
-        }  else if ( scrollY > 300) {
-          target.innerHTML = 'Schicht 3';
-        }  else if ( scrollY > 200) {
-          target.innerHTML = 'Schicht 2';
-        }
-        // ...
-        else {
-          target.innerHTML = 'Schicht 1';
-        }
-      })
+  if (topElement) {
+    topElement.style.animation = 'none'; // Reset der oberen Animation
+    void topElement.offsetHeight; // Reflow erzwingen
+    topElement.style.animation = 'showTopText 1s forwards'; // Obere Animation neu starten
+  }
+
+  if (bottomElement) {
+    bottomElement.style.animation = 'none'; // Reset der unteren Animation
+    void bottomElement.offsetHeight; // Reflow erzwingen
+    bottomElement.style.animation = 'showBottomText 1s forwards'; // Untere Animation neu starten
+  }
+}
+
+// Funktion, um die Animation erneut zu triggern
+function restartAnimation() {
+  const topElement = document.querySelector('.animated-title .text-top div');
+  const bottomElement = document.querySelector('.animated-title .text-bottom div');
+
+  if (topElement) {
+    topElement.style.animation = 'none'; // Reset Animation
+    void topElement.offsetHeight; // Erzwinge Reflow
+    topElement.style.animation = 'showTopText 1s forwards'; // Animation neu starten
+  }
+
+  if (bottomElement) {
+    bottomElement.style.animation = 'none'; // Reset Animation
+    void bottomElement.offsetHeight; // Erzwinge Reflow
+    bottomElement.style.animation = 'showBottomText 0.5s forwards'; // Animation neu starten
+  }
+}
+
+// Überwache Scrollposition und aktualisiere Texte
+let lastTopText = ''; // Letzter angezeigter Text oben
+let lastBottomText = ''; // Letzter angezeigter Text unten
+
+window.addEventListener('scroll', () => {
+  const topText = document.querySelector('.text-top div span');
+  const bottomText = document.querySelector('.text-bottom div span');
+  const animatedTitle = document.querySelector('.animated-title');
+  const scrollY = window.scrollY;
+
+  // Texte für die Layer
+  const layerTexts = {
+    1: { top: "Bohrstelle", bottom: "Einführung in das Thema." },
+    2: { top: "1 km Tiefe", bottom: "Temperaturen von 50-100°C gefunden." },
+    3: { top: "3 km Tiefe", bottom: "Hohe geothermische Gradienten." },
+    4: { top: "5 km Tiefe", bottom: "Zugang zu trockenen Gesteinsformationen." },
+    5: { top: "Schicht 5", bottom: "Die Bedeutung von Mikroorganismen." },
+    6: { top: "Schicht 6", bottom: "Fossile Rohstoffe und ihr Einfluss." },
+    7: { top: "Schicht 7", bottom: "Nachhaltige Nutzung von Ressourcen." },
+    8: { top: "Schicht 8", bottom: "Der Kreislauf des Lebens im Boden." },
+    9: { top: "Schicht 9", bottom: "Technologien für die Tiefenbohrung." },
+    10: { top: "Schicht 10", bottom: "Zukunftsperspektiven für nachhaltige Entwicklung." },
+  };
+  // Bestimme den aktuellen Layer basierend auf Scrollposition
+  let newTopText = '', newBottomText = '';
+  if (scrollY > 3840) {
+    newTopText = layerTexts[10].top;
+    newBottomText = layerTexts[10].bottom;
+  } else if (scrollY > 3450) {
+    newTopText = layerTexts[9].top;
+    newBottomText = layerTexts[9].bottom;
+  } else if (scrollY > 3056) {
+    newTopText = layerTexts[8].top;
+    newBottomText = layerTexts[8].bottom;
+  } else if (scrollY > 2662) {
+    newTopText = layerTexts[7].top;
+    newBottomText = layerTexts[7].bottom;
+  } else if (scrollY > 2268) {
+    newTopText = layerTexts[6].top;
+    newBottomText = layerTexts[6].bottom;
+  } else if (scrollY > 1874) {
+    newTopText = layerTexts[5].top;
+    newBottomText = layerTexts[5].bottom;
+  } else if (scrollY > 1480) {
+    newTopText = layerTexts[4].top;
+    newBottomText = layerTexts[4].bottom;
+  } else if (scrollY > 1086) {
+    newTopText = layerTexts[3].top;
+    newBottomText = layerTexts[3].bottom;
+  } else if (scrollY > 692) {
+    newTopText = layerTexts[2].top;
+    newBottomText = layerTexts[2].bottom;
+  } else {
+    newTopText = layerTexts[1].top;
+    newBottomText = layerTexts[1].bottom;
+  }
+
+  // Prüfe, ob die Texte geändert wurden
+  if (newTopText !== lastTopText || newBottomText !== lastBottomText) {
+    // Aktualisiere die Texte
+    if (topText) topText.textContent = newTopText;
+    if (bottomText) bottomText.textContent = newBottomText;
+
+    // Trigger die Animation neu
+    restartAnimation();
+
+    // Aktualisiere die letzten Texte
+    lastTopText = newTopText;
+    lastBottomText = newBottomText;
+  }
+});
+
+
     </script>
   <script>
     //Animiert den Kreis entlang dem Pfad basierend auf dem Scrollen
