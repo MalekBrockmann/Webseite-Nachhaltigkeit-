@@ -49,7 +49,7 @@ html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:1
 
 .animated-title > div div {
   font-size: 12vmin;
-  padding: 6vmin 0;
+  padding: 5.5vmin 0;
   position: absolute;
 }
 
@@ -86,9 +86,9 @@ html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:1
   animation-fill-mode: forwards;
   top: 0;
   transform: translate(0, -100%);
-  font-size: 5vmin;  /* Reduziere die Schriftgröße, wenn nötig */
-  line-height: 1;   /* Erhöhe den Zeilenabstand für bessere Lesbarkeit */
-  max-width: 30vw;   /* Maximal 90% der Breite des Bildschirms */
+  font-size: 4vmin;  /* Reduziere die Schriftgröße, wenn nötig */
+  line-height: 1.2;   /* Erhöhe den Zeilenabstand für bessere Lesbarkeit */
+  max-width: 35vw;   /* Maximal 90% der Breite des Bildschirms */
   max-height: 45vh;  /* Maximal 45% der Höhe des Bildschirms */
 }
 

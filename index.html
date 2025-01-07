@@ -157,32 +157,27 @@ window.addEventListener('scroll', () => {
 
   // Texte für die Layer
   const layerTexts = {
-    1: { top: "Bohrstelle", bottom: "Einführung in das Thema." },
-    2: { top: "1 km Tiefe", bottom: "Temperaturen von 50-100°C gefunden." },
-    3: { top: "3 km Tiefe", bottom: "Hohe geothermische Gradienten." },
-    4: { top: "5 km Tiefe", bottom: "Zugang zu trockenen Gesteinsformationen." },
-    5: { top: "Schicht 5", bottom: "Die Bedeutung von Mikroorganismen." },
-    6: { top: "Schicht 6", bottom: "Fossile Rohstoffe und ihr Einfluss." },
-    7: { top: "Schicht 7", bottom: "Nachhaltige Nutzung von Ressourcen." },
-    8: { top: "Schicht 8", bottom: "Der Kreislauf des Lebens im Boden." },
-    9: { top: "Schicht 9", bottom: "Technologien für die Tiefenbohrung." },
-    10: { top: "Schicht 10", bottom: "Zukunftsperspektiven für nachhaltige Entwicklung." },
+    1: { top: "Bohrstelle", bottom: "Die ziel Tiefe liegt bei etwa 20 km um superkirischte Wärme zu erlangen." },
+    2: { top: "1 km", bottom: "Temperaturen von 50-100°C gefunden." },
+    3: { top: "3 km", bottom: "Hohe geothermische Gradienten." },
+    4: { top: "5 km", bottom: "Zugang zu trockenen Gesteinsformationen." },
+    5: { top: "9,1 km", bottom: "Das Kontinentale Tiefbohrprogramm der Bundesrepublik Deutschland (KTB) erreichte diese Tiefe." },
+    6: { top: "12 km", bottom: "Das Kola Superdeep Borehole gilt bis heute als die tiefste Bohrung, wobei Bohrer bei dieser Tiefe in kürzester Zeit verschleißen und unbrauchbar werden." },
+    7: { top: "15 km", bottom: "Die Millimeter-Wave-Bohrtechnologie nutzt hochfrequente Energie statt mechanischer Bohrer, um harte Gesteinsschichten zu schmelzen." },
+    8: { top: "20 km", bottom: "In diesen Tiefen kann überall auf der Erde auf extrem heiße geothermische Energie zugreifen werden. Sie bietet jedem Land einen Weg zur Energieunabhängigkeit." },
   };
   // Bestimme den aktuellen Layer basierend auf Scrollposition
   let newTopText = '', newBottomText = '';
-  if (scrollY > 3840) {
-    newTopText = layerTexts[10].top;
-    newBottomText = layerTexts[10].bottom;
-  } else if (scrollY > 3450) {
+  if (scrollY = 4950) {
     newTopText = layerTexts[9].top;
     newBottomText = layerTexts[9].bottom;
-  } else if (scrollY > 3056) {
+  } else if (scrollY > 3450) {
     newTopText = layerTexts[8].top;
     newBottomText = layerTexts[8].bottom;
-  } else if (scrollY > 2662) {
+  } else if (scrollY > 3056) {
     newTopText = layerTexts[7].top;
     newBottomText = layerTexts[7].bottom;
-  } else if (scrollY > 2268) {
+  } else if (scrollY > 2662) {
     newTopText = layerTexts[6].top;
     newBottomText = layerTexts[6].bottom;
   } else if (scrollY > 1874) {
@@ -257,6 +252,16 @@ window.addEventListener('scroll', () => {
     }
 
     document.addEventListener('DOMContentLoaded', init)
+  </script>
+  <script>
+    // Scroll-Listener, um die Pixel-Position in der Konsole auszugeben
+    const logScrollPosition = () => {
+      console.log(`Scroll position: ${window.scrollY}px`);
+    };
+  
+    // Füge den Listener hinzu
+    window.addEventListener('scroll', logScrollPosition);
+
   </script>
 </body>
 
