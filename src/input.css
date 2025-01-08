@@ -42,7 +42,7 @@ html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:1
   transform: translate(15%, -50%);
   /* Zentriert das gesamte Element */
   width: 90vmin;
-  max-width: 100vw;
+  max-width: 50vw;
   /* Begrenze die Breite auf die Viewport-Breite */
   text-align: left;
   /* Hält den Text linksbündig */
@@ -83,7 +83,7 @@ html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:1
   animation-delay: 0.5s;
   animation-fill-mode: forwards;
   bottom: 0;
-  transform: translate(0, 100%);
+ 
 }
 
 .animated-title>div.text-top div span:first-child {
