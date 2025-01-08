@@ -191,96 +191,78 @@
         }
       }
 
-      // Überwache Scrollposition und aktualisiere Texte
-      let lastTopText = ""; // Letzter angezeigter Text oben
-      let lastBottomText = ""; // Letzter angezeigter Text unten
+      // Texte für die Layer
+const layerTexts = {
+  1: { top: "Bohrstelle1", bottom: "Die Zieltiefe liegt bei etwa 20 km, um superkritische Wärme zu erlangen." },
+  2: { top: "1 km", bottom: "Temperaturen von 50-100°C gefunden." },
+  3: { top: "3 km", bottom: "Hohe geothermische Gradienten." },
+  4: { top: "5 km", bottom: "Zugang zu trockenen Gesteinsformationen." },
+  5: { top: "9,1 km", bottom: "Das Kontinentale Tiefbohrprogramm der Bundesrepublik Deutschland (KTB) erreichte diese Tiefe." },
+  6: { top: "12 km", bottom: "Das Kola Superdeep Borehole gilt bis heute als die tiefste Bohrung. Bohrer verschleißen bei dieser Tiefe schnell." },
+  7: { top: "15 km", bottom: "Die Millimeter-Wave-Bohrtechnologie nutzt hochfrequente Energie, um harte Gesteinsschichten zu schmelzen." },
+  8: { top: "20 km", bottom: "In diesen Tiefen kann auf extrem heiße geothermische Energie zugegriffen werden. Dies bietet Energieunabhängigkeit." },
+};
 
-      window.addEventListener("scroll", () => {
-        const topText = document.querySelector(".text-top div span");
-        const bottomText = document.querySelector(".text-bottom div span");
-        const animatedTitle = document.querySelector(".animated-title");
-        const scrollY = window.scrollY;
 
-        // Texte für die Layer
-        const layerTexts = {
-          1: {
-            top: "Bohrstelle1",
-            bottom:
-              "Die ziel Tiefe liegt bei etwa 20 km um superkirischte Wärme zu erlangen.",
-          },
-          2: { top: "1 km", bottom: "Temperaturen von 50-100°C gefunden." },
-          3: { top: "3 km", bottom: "Hohe geothermische Gradienten." },
-          4: {
-            top: "5 km",
-            bottom: "Zugang zu trockenen Gesteinsformationen.",
-          },
-          5: {
-            top: "9,1 km",
-            bottom:
-              "Das Kontinentale Tiefbohrprogramm der Bundesrepublik Deutschland (KTB) erreichte diese Tiefe.",
-          },
-          6: {
-            top: "12 km",
-            bottom:
-              "Das Kola Superdeep Borehole gilt bis heute als die tiefste Bohrung, wobei Bohrer bei dieser Tiefe in kürzester Zeit verschleißen und unbrauchbar werden.",
-          },
-          7: {
-            top: "15 km",
-            bottom:
-              "Die Millimeter-Wave-Bohrtechnologie nutzt hochfrequente Energie statt mechanischer Bohrer, um harte Gesteinsschichten zu schmelzen.",
-          },
-          8: {
-            top: "20 km",
-            bottom:
-              "In diesen Tiefen kann überall auf der Erde auf extrem heiße geothermische Energie zugreifen werden. Sie bietet jedem Land einen Weg zur Energieunabhängigkeit.",
-          },
-        };
-        // Bestimme den aktuellen Layer basierend auf Scrollposition
-        let newTopText = "",
-          newBottomText = "";
-        if (scrollY > 4950) {
-          newTopText = layerTexts[9].top;
-          newBottomText = layerTexts[9].bottom;
-        } else if (scrollY > 3450) {
-          newTopText = layerTexts[8].top;
-          newBottomText = layerTexts[8].bottom;
-        } else if (scrollY > 3056) {
-          newTopText = layerTexts[7].top;
-          newBottomText = layerTexts[7].bottom;
-        } else if (scrollY > 2662) {
-          newTopText = layerTexts[6].top;
-          newBottomText = layerTexts[6].bottom;
-        } else if (scrollY > 1874) {
-          newTopText = layerTexts[5].top;
-          newBottomText = layerTexts[5].bottom;
-        } else if (scrollY > 1480) {
-          newTopText = layerTexts[4].top;
-          newBottomText = layerTexts[4].bottom;
-        } else if (scrollY > 1086) {
-          newTopText = layerTexts[3].top;
-          newBottomText = layerTexts[3].bottom;
-        } else if (scrollY > 692) {
-          newTopText = layerTexts[2].top;
-          newBottomText = layerTexts[2].bottom;
-        } else {
-          newTopText = layerTexts[1].top;
-          newBottomText = layerTexts[1].bottom;
-        }
+// Variablen, um den zuletzt gezeigten Text zu speichern
+let lastTopText = "";
+let lastBottomText = "";
 
-        // Prüfe, ob die Texte geändert wurden
-        if (newTopText !== lastTopText || newBottomText !== lastBottomText) {
-          // Aktualisiere die Texte
-          if (topText) topText.textContent = newTopText;
-          if (bottomText) bottomText.textContent = newBottomText;
+// Scroll-Listener
+window.addEventListener("scroll", () => {
+  const topText = document.querySelector(".text-top div span");
+  const bottomText = document.querySelector(".text-bottom div span");
 
-          // Trigger die Animation neu
-          restartAnimation();
+  // Berechne die Scrollposition in Prozent
+  const scrollY = window.scrollY;
+  const documentHeight = document.body.scrollHeight - window.innerHeight;
+  const scrollPercentage = (scrollY / documentHeight) * 100;
 
-          // Aktualisiere die letzten Texte
-          lastTopText = newTopText;
-          lastBottomText = newBottomText;
-        }
-      });
+  // Bestimme den aktuellen Layer basierend auf der Scrollposition in Prozent
+  let newTopText = "";
+  let newBottomText = "";
+
+  if (scrollPercentage > 90) {
+    newTopText = layerTexts[8]?.top;
+    newBottomText = layerTexts[8]?.bottom;
+  } else if (scrollPercentage > 75) {
+    newTopText = layerTexts[7]?.top;
+    newBottomText = layerTexts[7]?.bottom;
+  } else if (scrollPercentage > 60) {
+    newTopText = layerTexts[6]?.top;
+    newBottomText = layerTexts[6]?.bottom;
+  } else if (scrollPercentage > 50) {
+    newTopText = layerTexts[5]?.top;
+    newBottomText = layerTexts[5]?.bottom;
+  } else if (scrollPercentage > 40) {
+    newTopText = layerTexts[4]?.top;
+    newBottomText = layerTexts[4]?.bottom;
+  } else if (scrollPercentage > 30) {
+    newTopText = layerTexts[3]?.top;
+    newBottomText = layerTexts[3]?.bottom;
+  } else if (scrollPercentage > 20) {
+    newTopText = layerTexts[2]?.top;
+    newBottomText = layerTexts[2]?.bottom;
+  } else {
+    newTopText = layerTexts[1]?.top;
+    newBottomText = layerTexts[1]?.bottom;
+  }
+
+  // Prüfe, ob sich die Texte geändert haben
+  if (newTopText !== lastTopText || newBottomText !== lastBottomText) {
+    // Aktualisiere die Texte
+    if (topText) topText.textContent = newTopText || "";
+    if (bottomText) bottomText.textContent = newBottomText || "";
+
+    // Trigger die Animation neu
+    restartAnimation();
+
+    // Speichere die letzten Texte
+    lastTopText = newTopText;
+    lastBottomText = newBottomText;
+  }
+});
+
     </script>
     <script>
       //Animiert den Kreis entlang dem Pfad basierend auf dem Scrollen
