@@ -14,6 +14,7 @@ html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:1
   0% {
     transform: translate3d(0, 100%, 0);
   }
+
   100% {
     transform: translate3d(0, 0, 0);
   }
@@ -23,6 +24,7 @@ html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:1
   0% {
     transform: translate3d(0, -100%, 0);
   }
+
   100% {
     transform: translate3d(0, 0, 0);
   }
@@ -32,40 +34,47 @@ html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:1
   color: #ffffff;
   font-family: Roboto, Arial, sans-serif;
   height: 90vmin;
-  max-height: 100vh; /* Begrenze die maximale Höhe auf die Viewport-Höhe */
+  max-height: 100vh;
+  /* Begrenze die maximale Höhe auf die Viewport-Höhe */
   left: 50%;
   position: absolute;
   top: 50%;
-  transform: translate(15%, -50%); /* Zentriert das gesamte Element */
+  transform: translate(15%, -50%);
+  /* Zentriert das gesamte Element */
   width: 90vmin;
-  max-width: 100vw; /* Begrenze die Breite auf die Viewport-Breite */
-  text-align: left; /* Hält den Text linksbündig */
+  max-width: 100vw;
+  /* Begrenze die Breite auf die Viewport-Breite */
+  text-align: left;
+  /* Hält den Text linksbündig */
 }
 
-.animated-title > div {
-  height: 50%; /* Nutzt die Hälfte des Containers */
+.animated-title>div {
+  height: 50%;
+  /* Nutzt die Hälfte des Containers */
   overflow: hidden;
   position: absolute;
   width: 100%;
 }
 
-.animated-title > div div {
-  font-size: 8vmin; /* Dynamische Schriftgröße für responsives Verhalten */
+.animated-title>div div {
+  font-size: 8vmin;
+  /* Dynamische Schriftgröße für responsives Verhalten */
   padding: 5.5vmin 0;
   position: absolute;
-  text-align: left; /* Text bleibt linksbündig */
+  text-align: left;
+  /* Text bleibt linksbündig */
 }
 
-.animated-title > div div span {
+.animated-title>div div span {
   display: block;
 }
 
-.animated-title > div.text-top {
+.animated-title>div.text-top {
   border-bottom: 1vmin solid #000;
   top: 0;
 }
 
-.animated-title > div.text-top div {
+.animated-title>div.text-top div {
   animation: showTopText 1s ease-out;
   animation-delay: 0.5s;
   animation-fill-mode: forwards;
@@ -73,35 +82,46 @@ html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:1
   transform: translate(0, 100%);
 }
 
-.animated-title > div.text-top div span:first-child {
+.animated-title>div.text-top div span:first-child {
   color: #ebe8e8;
 }
 
-.animated-title > div.text-bottom {
+.animated-title>div.text-bottom {
   bottom: 0;
   padding-top: 5vmin;
-  overflow: hidden; /* Verhindert, dass der Text außerhalb des Containers geht */
+  overflow: hidden;
+  /* Verhindert, dass der Text außerhalb des Containers geht */
   display: flex;
-  justify-content: flex-start; /* Text linksbündig halten */
-  align-items: flex-start; /* Text links oben halten */
-  max-width: 90%; /* Begrenze die Breite */
+  justify-content: flex-start;
+  /* Text linksbündig halten */
+  align-items: flex-start;
+  /* Text links oben halten */
+  max-width: 90%;
+  /* Begrenze die Breite */
   margin: 0 auto;
 }
 
-.animated-title > div.text-bottom div {
+.animated-title>div.text-bottom div {
   animation: showBottomText 1s ease-out;
   animation-delay: 0.5s;
   animation-fill-mode: forwards;
   top: 0;
   transform: translate(0, -100%);
-  font-size: 4vmin; /* Dynamische Schriftgröße für kleinere Bildschirme */
-  line-height: 1.2; /* Angemessener Zeilenabstand */
-  max-width: 90%; /* Begrenze die Breite */
-  max-height: 45vh; /* Begrenze die Höhe */
+  font-size: 4vmin;
+  /* Dynamische Schriftgröße für kleinere Bildschirme */
+  line-height: 1.2;
+  /* Angemessener Zeilenabstand */
+  max-width: 90%;
+  /* Begrenze die Breite */
+  max-height: 45vh;
+  /* Begrenze die Höhe */
   margin: 0 auto;
-  word-wrap: break-word; /* Lasse Wörter umbrechen */
-  overflow-wrap: break-word; /* Unterstützung für moderne Browser */
-  text-align: left; /* Text bleibt linksbündig */
+  word-wrap: break-word;
+  /* Lasse Wörter umbrechen */
+  overflow-wrap: break-word;
+  /* Unterstützung für moderne Browser */
+  text-align: left;
+  /* Text bleibt linksbündig */
 }
 
 /* Media Queries für responsives Verhalten */
@@ -111,11 +131,11 @@ html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:1
     height: 80vmin;
   }
 
-  .animated-title > div div {
+  .animated-title>div div {
     font-size: 6vmin;
   }
 
-  .animated-title > div.text-bottom div {
+  .animated-title>div.text-bottom div {
     font-size: 3vmin;
   }
 }
@@ -126,11 +146,61 @@ html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:1
     height: 70vmin;
   }
 
-  .animated-title > div div {
+  .animated-title>div div {
     font-size: 5vmin;
   }
 
-  .animated-title > div.text-bottom div {
+  .animated-title>div.text-bottom div {
     font-size: 2.5vmin;
   }
+}
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+  .heading-wrap h1 {
+    font-size: 2rem;
+  }
+
+  .animated-title .text-top div,
+  .animated-title .text-bottom div {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .heading-wrap h1 {
+    font-size: 1.5rem;
+  }
+
+  .animated-title .text-top div,
+  .animated-title .text-bottom div {
+    font-size: 1.2rem;
+  }
+
+  .image-wrap {
+    width: 100%;
+    height: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .heading-wrap h1 {
+    font-size: 1.2rem;
+  }
+
+  .animated-title .text-top div,
+  .animated-title .text-bottom div {
+    font-size: 1rem;
+  }
+
+  .image-wrap {
+    width: 100%;
+    height: auto;
+  }
+}
+svg {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto; /* Zentrieren */
 }
