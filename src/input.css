@@ -211,23 +211,23 @@ svg {
 }
 .cta-container {
   position: absolute;
-  top: 17%; /* 50% von oben */
-  left: 10%; /* 50% von links */
-  transform: translate(-50%, -50%); /* Exakte Zentrierung */
+  top: 17%; /* Passt die Position des Containers an */
+  left: 10%; /* Passt die horizontale Position an */
+  transform: translate(-50%, -50%); /* Sicherstellung der Zentrierung */
 }
 
-/* Angepasster Button */
+/* Responsiver Button */
 .button-27 {
   appearance: none;
-  background-color: #beba8e; /* Auffällige, lebendige Farbe */
+  background-color: #beba8e; /* Primärfarbe */
   border-radius: 15px;
   box-sizing: border-box;
   color: #313131;
   cursor: pointer;
   display: inline-block;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 18px; /* Leicht größere Schrift */
-  font-weight: 700; /* Etwas fett für die Wichtigkeit */
+  font-size: 18px; /* Ausgangsgröße */
+  font-weight: 700;
   line-height: normal;
   margin: 0;
   min-height: 50px;
@@ -238,18 +238,18 @@ svg {
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
-  width: auto; /* Flexibler Button */
+  width: auto; /* Flexible Breite */
   will-change: transform;
 }
 
 .button-27:hover {
-  background-color: #ffffff; /* Farbe wechselt bei Hover */
+  background-color: #ffffff; /* Hover-Farbe */
   box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 12px;
   transform: translateY(-3px);
 }
 
 .button-27:active {
-  background-color: #ebc168; /* Etwas dunkler bei Aktivierung */
+  background-color: #ebc168; /* Aktivierte Farbe */
   box-shadow: none;
   transform: translateY(0);
 }
@@ -261,3 +261,42 @@ svg {
   color: #666666;
 }
 
+/* Media Queries für responsives Verhalten */
+@media (max-width: 1200px) {
+  .cta-container {
+    top: 20%; /* Leichte Verschiebung für kleinere Bildschirme */
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .button-27 {
+    font-size: 16px; /* Kleinere Schriftgröße */
+    padding: 12px 24px; /* Reduziertes Padding */
+  }
+}
+
+@media (max-width: 768px) {
+  .cta-container {
+    top: 25%; /* Position weiter nach unten */
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .button-27 {
+    font-size: 14px; /* Noch kleinere Schriftgröße */
+    padding: 10px 20px; /* Weniger Padding */
+  }
+}
+
+@media (max-width: 480px) {
+  .cta-container {
+    top: 30%; /* Position weiter nach unten */
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .button-27 {
+    font-size: 12px; /* Kleinste Schriftgröße */
+    padding: 8px 16px; /* Kompaktes Padding */
+  }
+}
