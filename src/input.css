@@ -42,7 +42,7 @@ html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:1
   transform: translate(15%, -50%);
   /* Zentriert das gesamte Element */
   width: 90vmin;
-  max-width: 50vw;
+  max-width: 40%;
   /* Begrenze die Breite auf die Viewport-Breite */
   text-align: left;
   /* Hält den Text linksbündig */
@@ -136,7 +136,7 @@ html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:1
   }
 
   .animated-title > div div {
-    font-size: 6.6vmin; /* 10% größer */
+    font-size: 90vmin; /* 10% größer */
   }
 
   .animated-title > div.text-bottom div {
@@ -178,7 +178,7 @@ html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:1
 
   .animated-title .text-top div,
   .animated-title .text-bottom div {
-    font-size: 1.32rem; /* 10% größer */
+    font-size: 3rem; /* 10% größer */
   }
 
   .image-wrap {
@@ -194,7 +194,7 @@ html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:1
 
   .animated-title .text-top div,
   .animated-title .text-bottom div {
-    font-size: 1.1rem; /* 10% größer */
+    font-size: 1.5rem; /* 10% größer */
   }
 
   .image-wrap {
@@ -277,8 +277,8 @@ svg {
 
 @media (max-width: 768px) {
   .cta-container {
-    top: 25%; /* Position weiter nach unten */
-    left: 50%;
+    top: 90%; /* Position weiter nach unten */
+    left: 25%;
     transform: translate(-50%, -50%);
   }
 
@@ -290,8 +290,8 @@ svg {
 
 @media (max-width: 480px) {
   .cta-container {
-    top: 30%; /* Position weiter nach unten */
-    left: 50%;
+    top: 90%; /* Position weiter nach unten */
+    left: 30%;
     transform: translate(-50%, -50%);
   }
 
