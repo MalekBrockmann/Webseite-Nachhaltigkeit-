@@ -35,171 +35,114 @@ html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:1
   font-family: Roboto, Arial, sans-serif;
   height: 90vmin;
   max-height: 100vh;
-  /* Begrenze die maximale Höhe auf die Viewport-Höhe */
   left: 50%;
   position: absolute;
   top: 50%;
   transform: translate(15%, -50%);
-  /* Zentriert das gesamte Element */
   width: 90vmin;
   max-width: 40%;
-  /* Begrenze die Breite auf die Viewport-Breite */
   text-align: left;
-  /* Hält den Text linksbündig */
 }
 
 .animated-title > div {
-  height: 50%; /* Nutzt die Hälfte des Containers */
-  overflow-wrap: break-word; /* Erlaubt Umbrüche bei langen Wörtern */
-  word-wrap: break-word; /* Unterstützung für ältere Browser */
-  white-space: normal; /* Erlaubt Zeilenumbrüche */
-  width: calc(100% - 20px); /* Lässt Platz für einen Abstand von 10px pro Seite */
-  box-sizing: border-box; /* Berücksichtigt Padding bei der Breite */
-  padding: 10px; /* Fügt etwas Innenabstand hinzu */
+  height: 50%;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  white-space: normal;
+  width: calc(100% - 20px);
+  box-sizing: border-box;
+  padding: 10px;
   position: absolute;
-  overflow: hidden; /* Verhindert das Überschreiten des Containers */
+  overflow: hidden;
 }
 
-.animated-title>div div {
+.animated-title > div div {
   font-size: 8vmin;
-  /* Dynamische Schriftgröße für responsives Verhalten */
   padding: 5.5vmin 0;
   position: absolute;
   text-align: left;
-  /* Text bleibt linksbündig */
 }
 
-.animated-title>div div span {
+.animated-title > div div span {
   display: block;
+  max-width: 100%;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  line-height: 1.4;
 }
 
-.animated-title>div.text-top {
+.animated-title > div.text-top {
   border-bottom: 1vmin solid #000;
   top: 0;
 }
 
-.animated-title>div.text-top div {
+.animated-title > div.text-top div {
   animation: showTopText 1s ease-out;
   animation-delay: 0.5s;
   animation-fill-mode: forwards;
   bottom: 0;
- 
 }
 
-.animated-title>div.text-top div span:first-child {
+.animated-title > div.text-top div span:first-child {
   color: #ebe8e8;
 }
 
-.animated-title>div.text-bottom {
+.animated-title > div.text-bottom {
   bottom: 0;
   padding-top: 5vmin;
   overflow: hidden;
-  /* Verhindert, dass der Text außerhalb des Containers geht */
   display: flex;
   justify-content: flex-start;
-  /* Text linksbündig halten */
   align-items: flex-start;
-  /* Text links oben halten */
   max-width: 90%;
-  /* Begrenze die Breite */
   margin: 0 auto;
 }
 
-.animated-title>div.text-bottom div {
+.animated-title > div.text-bottom div {
   animation: showBottomText 1s ease-out;
   animation-delay: 0.5s;
   animation-fill-mode: forwards;
   top: 0;
   transform: translate(0, -100%);
   font-size: 4vmin;
-  /* Dynamische Schriftgröße für kleinere Bildschirme */
   line-height: 1.2;
-  /* Angemessener Zeilenabstand */
   max-width: 90%;
-  /* Begrenze die Breite */
   max-height: 45vh;
-  /* Begrenze die Höhe */
   margin: 0 auto;
   word-wrap: break-word;
-  /* Lasse Wörter umbrechen */
   overflow-wrap: break-word;
-  /* Unterstützung für moderne Browser */
   text-align: left;
-  /* Text bleibt linksbündig */
-}
-
-/* Media Queries für responsives Verhalten */
-@media (max-width: 768px) {
-  .animated-title {
-    width: 80vmin;
-    height: 100vmin;
-  }
-
-  .animated-title > div div {
-    font-size: 90vmin; /* 10% größer */
-  }
-
-  .animated-title > div.text-bottom div {
-    font-size: 3.3vmin; /* 10% größer */
-  }
-}
-
-@media (max-width: 480px) {
-  .animated-title {
-    width: 70vmin;
-    height: 70vmin;
-  }
-
-  .animated-title > div div {
-    font-size: 5.5vmin; /* 10% größer */
-  }
-
-  .animated-title > div.text-bottom div {
-    font-size: 2.75vmin; /* 10% größer */
-  }
 }
 
 /* Responsive Styles */
 @media (max-width: 1200px) {
-  .heading-wrap h1 {
-    font-size: 2rem;
+  .animated-title > div div span {
+    font-size: 7vmin;
   }
 
-  .animated-title .text-top div,
-  .animated-title .text-bottom div {
-    font-size: 1.5rem;
+  .animated-title > div.text-bottom div {
+    font-size: 3.5vmin;
   }
 }
 
 @media (max-width: 768px) {
-  .heading-wrap h1 {
-    font-size: 1.65rem; /* 10% größer */
+  .animated-title > div div span {
+    font-size: 6vmin;
   }
 
-  .animated-title .text-top div,
-  .animated-title .text-bottom div {
-    font-size: 3rem; /* 10% größer */
-  }
-
-  .image-wrap {
-    width: 100%;
-    height: auto;
+  .animated-title > div.text-bottom div {
+    font-size: 3vmin;
   }
 }
 
 @media (max-width: 480px) {
-  .heading-wrap h1 {
-    font-size: 1.32rem; /* 10% größer */
+  .animated-title > div div span {
+    font-size: 5vmin;
   }
 
-  .animated-title .text-top div,
-  .animated-title .text-bottom div {
-    font-size: 1.5rem; /* 10% größer */
-  }
-
-  .image-wrap {
-    width: 100%;
-    height: auto;
+  .animated-title > div.text-bottom div {
+    font-size: 2.5vmin;
   }
 }
 
@@ -207,26 +150,26 @@ svg {
   max-width: 100%;
   height: auto;
   display: block;
-  margin: 0 auto; /* Zentrieren */
-}
-.cta-container {
-  position: absolute;
-  top: 17%; /* Passt die Position des Containers an */
-  left: 10%; /* Passt die horizontale Position an */
-  transform: translate(-50%, -50%); /* Sicherstellung der Zentrierung */
+  margin: 0 auto;
 }
 
-/* Responsiver Button */
+.cta-container {
+  position: absolute;
+  top: 17%;
+  left: 10%;
+  transform: translate(-50%, -50%);
+}
+
 .button-27 {
   appearance: none;
-  background-color: #beba8e; /* Primärfarbe */
+  background-color: #beba8e;
   border-radius: 15px;
   box-sizing: border-box;
   color: #313131;
   cursor: pointer;
   display: inline-block;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 18px; /* Ausgangsgröße */
+  font-size: 18px;
   font-weight: 700;
   line-height: normal;
   margin: 0;
@@ -236,67 +179,17 @@ svg {
   text-decoration: none;
   transition: all 200ms ease-in-out;
   user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  width: auto; /* Flexible Breite */
+  width: auto;
   will-change: transform;
 }
 
 .button-27:hover {
-  background-color: #ffffff; /* Hover-Farbe */
+  background-color: #ffffff;
   box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 12px;
   transform: translateY(-3px);
 }
 
 .button-27:active {
-  background-color: #f3eac0; /* Aktivierte Farbe */
+  background-color: #f3eac0;
   box-shadow: none;
-  transform: translateY(0);
-}
-
-.button-27:disabled {
-  pointer-events: none;
-  background-color: #cccccc;
-  border-color: #aaaaaa;
-  color: #333333;
-}
-
-/* Media Queries für responsives Verhalten */
-@media (max-width: 1200px) {
-  .cta-container {
-    top: 20%; /* Leichte Verschiebung für kleinere Bildschirme */
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-
-  .button-27 {
-    font-size: 16px; /* Kleinere Schriftgröße */
-    padding: 12px 24px; /* Reduziertes Padding */
-  }
-}
-
-@media (max-width: 768px) {
-  .cta-container {
-    top: 90%; /* Position weiter nach unten */
-    left: 25%;
-    transform: translate(-50%, -50%);
-  }
-
-  .button-27 {
-    font-size: 14px; /* Noch kleinere Schriftgröße */
-    padding: 10px 20px; /* Weniger Padding */
-  }
-}
-
-@media (max-width: 480px) {
-  .cta-container {
-    top: 90%; /* Position weiter nach unten */
-    left: 30%;
-    transform: translate(-50%, -50%);
-  }
-
-  .button-27 {
-    font-size: 12px; /* Kleinste Schriftgröße */
-    padding: 8px 16px; /* Kompaktes Padding */
-  }
-}
+  transf
