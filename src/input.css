@@ -132,7 +132,7 @@ html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:1
 @media (max-width: 768px) {
   .animated-title {
     width: 80vmin;
-    height: 80vmin;
+    height: 100vmin;
   }
 
   .animated-title > div div {
@@ -249,7 +249,7 @@ svg {
 }
 
 .button-27:active {
-  background-color: #ebc168; /* Aktivierte Farbe */
+  background-color: #f3eac0; /* Aktivierte Farbe */
   box-shadow: none;
   transform: translateY(0);
 }
@@ -258,7 +258,7 @@ svg {
   pointer-events: none;
   background-color: #cccccc;
   border-color: #aaaaaa;
-  color: #666666;
+  color: #333333;
 }
 
 /* Media Queries für responsives Verhalten */
